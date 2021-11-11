@@ -1,25 +1,35 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
 
-function App() {
+import News from './components/News';
+import SideBar from './components/Sidebar';
+import FindBlock from './components/FindBlock';
+import CentralBanner from './components/CentralBanner';
+import Sidebars from './components/SideBars';
+
+const newsData = [];
+const sidebarData = [];
+const findData = [];
+const sideBarsData = [];
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Component>
+
+      <News data={newsData} />
+
+      <SideBar data={sidebarData}>
+        {/* Возможные потомки */}
+      </SideBar>
+
+      <FindBlock data={findData} />
+
+      <CentralBanner>
+        <a href="./someImage.png"><img src="./" alt="" /></a>
+      </CentralBanner>
+
+      <Sidebars data={sideBarsData} />
+
+    </React.Component>
   );
 }
-
-export default App;
